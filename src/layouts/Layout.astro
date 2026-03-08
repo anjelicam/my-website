@@ -1,23 +1,250 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  sidebar?: boolean;
+}
+
+const { title, description = "Anjelica's Data Science Portfolio", sidebar = true } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=DM+Serif+Display&display=swap"
+      rel="stylesheet"
+    />
+    <title>{title}</title>
+  </head>
+  <body>
+    {sidebar ? (
+      <div class="page-layout">
+        <aside class="sidebar">
+          <div class="sidebar-inner">
+            <a href={base} class="site-title">anjelica martinez</a>
+            <p class="site-tagline">data science, machine learning,<br />& storytelling with data</p>
+            <nav>
+              <a href={base}>Portfolio</a>
+              <a href={`${base}about`}>About</a>
+              <a href="https://github.com/anjelicam" target="_blank">GitHub</a>
+              <a href="https://linkedin.com/in/YOUR-LINKEDIN" target="_blank">LinkedIn</a>
+            </nav>
+            <footer>
+              <p>&copy; {new Date().getFullYear()} Anjelica Martinez</p>
+            </footer>
+          </div>
+        </aside>
+        <main>
+          <slot />
+        </main>
+      </div>
+    ) : (
+      <div class="page-simple">
+        <nav class="top-nav">
+          <a href={base} class="back-home">&larr; Back to portfolio</a>
+        </nav>
+        <main class="main-narrow">
+          <slot />
+        </main>
+        <footer class="simple-footer">
+          <p>&copy; {new Date().getFullYear()} Anjelica Martinez</p>
+        </footer>
+      </div>
+    )}
+  </body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+<style is:global>
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --color-bg: #fafafa;
+    --color-text: #1a1a1a;
+    --color-text-muted: #6b6b6b;
+    --color-accent: #65a30d;
+    --color-accent-hover: #4d7c0f;
+    --color-border: #e5e5e5;
+    --color-card-bg: #ffffff;
+    --color-tag-bg: #f0f0f0;
+    --color-sidebar-bg: #ffffff;
+    --font-body: "DM Sans", sans-serif;
+    --font-display: "DM Serif Display", serif;
+  }
+
+  html {
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  a:hover {
+    color: var(--color-accent-hover);
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Sidebar layout */
+  .page-layout {
+    display: flex;
+    min-height: 100vh;
+  }
+
+  .sidebar {
+    width: 260px;
+    flex-shrink: 0;
+    background: var(--color-sidebar-bg);
+    border-right: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+  }
+
+  .sidebar-inner {
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .site-title {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+  }
+
+  .site-title:hover {
+    color: var(--color-accent);
+  }
+
+  .site-tagline {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+
+  .sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .sidebar nav a {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  .sidebar nav a:hover {
+    color: var(--color-accent);
+  }
+
+  .sidebar footer {
+    margin-top: auto;
+  }
+
+  .sidebar footer p {
+    color: #ccc;
+    font-size: 0.8rem;
+  }
+
+  .page-layout main {
+    flex: 1;
+    padding: 2.5rem 3rem 4rem;
+    max-width: 800px;
+  }
+
+  /* Simple layout for project pages */
+  .page-simple {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .top-nav {
+    padding: 1.5rem 0;
+  }
+
+  .back-home {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .back-home:hover {
+    color: var(--color-accent);
+  }
+
+  .main-narrow {
+    padding: 0 0 4rem;
+  }
+
+  .simple-footer {
+    border-top: 1px solid var(--color-border);
+    padding: 1.5rem 0;
+    text-align: center;
+  }
+
+  .simple-footer p {
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .page-layout {
+      flex-direction: column;
+    }
+
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+      border-right: none;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .sidebar-inner {
+      padding: 1.5rem;
+    }
+
+    .sidebar nav {
+      flex-direction: row;
+      gap: 1.25rem;
+    }
+
+    .sidebar footer {
+      display: none;
+    }
+
+    .page-layout main {
+      padding: 1.5rem;
+    }
+  }
 </style>
