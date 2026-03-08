@@ -34,7 +34,7 @@ const base = import.meta.env.BASE_URL;
               <a href={base}>Portfolio</a>
               <a href={`${base}about`}>About</a>
               <a href="https://github.com/anjelicam" target="_blank">GitHub</a>
-              <a href="https://linkedin.com/in/anjelicamartinez" target="_blank">LinkedIn</a>
+              <a href="https://linkedin.com/in/YOUR-LINKEDIN" target="_blank">LinkedIn</a>
             </nav>
             <footer>
               <p>&copy; {new Date().getFullYear()} Anjelica Martinez</p>
@@ -132,14 +132,15 @@ const base = import.meta.env.BASE_URL;
 
   .site-title {
     font-family: var(--font-display);
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 400;
     color: var(--color-text);
     margin-bottom: 0.75rem;
+    white-space: nowrap;
   }
 
   .site-title:hover {
-    color: var(--color-accent);
+    color: var(--color-accent-hover);
   }
 
   .site-tagline {
@@ -162,7 +163,7 @@ const base = import.meta.env.BASE_URL;
   }
 
   .sidebar nav a:hover {
-    color: var(--color-accent);
+    color: var(--color-accent-hover);
   }
 
   .sidebar footer {
@@ -177,7 +178,8 @@ const base = import.meta.env.BASE_URL;
   .page-layout main {
     flex: 1;
     padding: 2.5rem 3rem 4rem;
-    max-width: 800px;
+    max-width: 900px;
+    min-width: 0;
   }
 
   /* Simple layout for project pages */
@@ -185,6 +187,7 @@ const base = import.meta.env.BASE_URL;
     max-width: 760px;
     margin: 0 auto;
     padding: 0 2rem;
+    width: 100%;
   }
 
   .top-nav {
@@ -198,7 +201,7 @@ const base = import.meta.env.BASE_URL;
   }
 
   .back-home:hover {
-    color: var(--color-accent);
+    color: var(--color-accent-hover);
   }
 
   .main-narrow {
@@ -216,6 +219,13 @@ const base = import.meta.env.BASE_URL;
     font-size: 0.8rem;
   }
 
+  /* Tablet */
+  @media (max-width: 1024px) {
+    .page-layout main {
+      padding: 2rem 2rem 3rem;
+    }
+  }
+
   /* Mobile */
   @media (max-width: 768px) {
     .page-layout {
@@ -231,12 +241,23 @@ const base = import.meta.env.BASE_URL;
     }
 
     .sidebar-inner {
-      padding: 1.5rem;
+      padding: 1.25rem 1.5rem;
+    }
+
+    .site-title {
+      font-size: 1.3rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .site-tagline {
+      margin-bottom: 1rem;
+      font-size: 0.85rem;
     }
 
     .sidebar nav {
       flex-direction: row;
       gap: 1.25rem;
+      flex-wrap: wrap;
     }
 
     .sidebar footer {
@@ -245,6 +266,33 @@ const base = import.meta.env.BASE_URL;
 
     .page-layout main {
       padding: 1.5rem;
+    }
+
+    .page-simple {
+      padding: 0 1.25rem;
+    }
+  }
+
+  /* Small phones */
+  @media (max-width: 400px) {
+    .sidebar-inner {
+      padding: 1rem;
+    }
+
+    .sidebar nav {
+      gap: 0.75rem;
+    }
+
+    .sidebar nav a {
+      font-size: 0.85rem;
+    }
+
+    .page-layout main {
+      padding: 1rem;
+    }
+
+    .page-simple {
+      padding: 0 1rem;
     }
   }
 </style>
