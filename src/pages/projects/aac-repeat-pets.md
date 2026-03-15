@@ -6,11 +6,8 @@ github: "https://anjelicam.github.io/aac-shelter-analysis/"
 tags: ["Data Analysis", "R"]
 ---
 
-![chart description](/my-website/images/animal_shelter.jpg)
+![illustration of vet tech with several dogs in a clinic setting](/my-website/images/animal_shelter.jpg)
 
-# Shelter Stories in the Data
-
-## An analysis of the Austin Animal Center (AAC) intake and outcomes dataset
 
 For this project, I used the [Austin Animal Center (AAC) dataset](https://data.austintexas.gov/browse?q=animal&sortBy=relevance&page=1&pageSize=20), which comes from the [City of Austin’s open data portal](https://data.austintexas.gov/). Each row represents a single animal and its outcome: adoption, transfer, euthanasia, or return-to-owner. Alongside that outcome, the dataset records things like species, breed, age at intake, sex, and intake type. Every row represents one shelter animal's visit to the center, a piece of their story.
 
@@ -41,6 +38,8 @@ For most dogs, repeat visits weren’t a regular habit. Nearly **87% of them wer
 The real outliers were rare. Just 109 dogs cycled through six to nine stays, and only six dogs crossed the double-digit mark.
 
 And then there’s the record-holder: one dog with 33 separate stays. That number is so far off the chart it immediately begged for a closer look. Which is exactly what I did next!
+
+![Bar Chart of Number of Times Dogs Return to Austin Animal Center](/my-website/images/number_times_dogs_returned.png)
 
 ### Snapshot: Lil’ Bit – The Dog With 33 Returns
 
