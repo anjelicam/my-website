@@ -2,21 +2,22 @@
 import Layout from "../layouts/Layout.astro";
 const base = import.meta.env.BASE_URL;
 const projects = [
-  {
+  
+{
+    title: "Banned Books By Subject",
+    href: `${base}/projects/banned_books_by_subject`,
+    tags: ["Python"],
+    image: `${base}/images/banned_subjects.jpg`,
+    size: "tall",
+  },
+{
     title: "Gender Bias in Car Safety",
     href: `${base}/projects/gender_bias_car_safety`,
     tags: ["R", "Quantitative Analysis"],
     image: `${base}/images/gender_bias.jpg`,
-    size: "wide",
-  },
-  {
-    title: "Banned Books Analysis",
-    href: `${base}/projects/banned-books`,
-    tags: ["Data Analysis", "R"],
-    image: `${base}/images/banned_books.jpg`,
     size: "square",
   },
-  {
+{
     title: "Shelter Stories in the Data",
     href: `${base}/projects/aac-repeat-pets`,
     tags: ["Data Analysis", "Visualization", "R"],
@@ -24,12 +25,37 @@ const projects = [
     size: "square",
   },
   {
+    title: "Banned Books Analysis",
+    href: `${base}/projects/banned-books`,
+    tags: ["Data Analysis", "R"],
+    image: `${base}/images/banned_books.jpg`,
+    size: "wide",
+  },
+  
+{
+    title: "Air Quality & Mobility",
+    href: `${base}/projects/banned_books_by_subject`,
+    tags: ["Python"],
+    image: `${base}/images/car_pollution.jpg`,
+    size: "tall",
+  },
+  {
     title: "PvP vs PvE Discourse Analysis",
     href: `${base}/projects/project-four`,
     tags: ["NLP", "Machine Learning", "Python"],
     image: `${base}/images/arc_raiders.jpg`,
-    size: "wide",
+    size: "square",
   },
+
+{
+    title: "Vaccine & Disease Coverage",
+    href: `${base}/projects/vaccine_disease_coverage`,
+    tags: ["Python"],
+    image: `${base}/images/vaccine_coverage.jpg`,
+    size: "square",
+  },
+
+
 ];
 ---
 <Layout title="Anjelica Martinez — Portfolio">
