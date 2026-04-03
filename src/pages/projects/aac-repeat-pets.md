@@ -1,19 +1,21 @@
----
+\---
+
 layout: ../../layouts/ProjectLayout.astro
 title: "Shelter Stories in the Data"
 description: "An analysis of the Austin Animal Center (AAC) intake and outcomes dataset."
 github: "https://anjelicam.github.io/aac-shelter-analysis/"
-tags: ["Data Analysis", "R"]
+tags: \["Data Analysis", "R"]
 ---
 
-![illustration of vet tech with several dogs in a clinic setting](/my-website/images/animal_shelter.jpg)
+!\[illustration of vet tech with several dogs in a clinic setting](/my-website/images/animal\_shelter.jpg)
+
 
 
 For this project, I used the [Austin Animal Center (AAC) dataset](https://data.austintexas.gov/browse?q=animal&sortBy=relevance&page=1&pageSize=20), which comes from the [City of Austin’s open data portal](https://data.austintexas.gov/). Each row represents a single animal and its outcome: adoption, transfer, euthanasia, or return-to-owner. Alongside that outcome, the dataset records things like species, breed, age at intake, sex, and intake type. Every row represents one shelter animal's visit to the center, a piece of their story.
 
 The dataset spans from mid-2013 through mid-2025 and includes over 130,000 animals. Dogs and cats make up the overwhelming majority thought you’ll also see the occasional bat, racoon or chicken sneaking into the records. The breadth of the data makes it perfect for exploring questions about shelter operations, adoption patterns, and the uncomfortable but important reality of euthanasia. I focused on the ones that get at meaningful shelter outcomes: how long animals stay at the shelter, what factors affect their likelihood of being adopted, and how these patterns vary across species, breeds, and age groups. These are the kinds of questions that matter for shelter policy, for adopters, and ultimately for the animals themselves.
 
-------------------------------------------------------------------------
+\---
 
 ## Part 1: All Repeat Dogs — First Look at the Numbers
 
@@ -27,11 +29,10 @@ Breed patterns stood out quickly. **Pit Bull Mixes** **topped the list**, follow
 
 These broad strokes already pointed to two paths worth following:
 
--   Are certain breeds facing bigger barriers to staying in homes?
+* Are certain breeds facing bigger barriers to staying in homes?
+* And why are neutered males (typically considered lower-risk) so over represented among repeat visitors?
 
--   And why are neutered males (typically considered lower-risk) so over represented among repeat visitors?
-
-### 1. How Many Times Do Dogs Return to the Shelter?
+### 1\. How Many Times Do Dogs Return to the Shelter?
 
 For most dogs, repeat visits weren’t a regular habit. Nearly **87% of them were one-time returns**, meaning they came back just once and then (hopefully) settled into a more permanent home. Another **12% came back two or three times**, and fewer than 1% showed up four or five times.
 
@@ -39,7 +40,7 @@ The real outliers were rare. Just 109 dogs cycled through six to nine stays, and
 
 And then there’s the record-holder: one dog with 33 separate stays. That number is so far off the chart it immediately begged for a closer look. Which is exactly what I did next!
 
-![Bar Chart of Number of Times Dogs Return to Austin Animal Center](/my-website/images/number_times_dogs_returned.png)
+!\[Bar Chart of Number of Times Dogs Return to Austin Animal Center](/my-website/images/number\_times\_dogs\_returned.png)
 
 ### Snapshot: Lil’ Bit – The Dog With 33 Returns
 
@@ -53,7 +54,7 @@ The chart makes his story clear: each point is both a homecoming and a farewell.
 
 Lil’ Bit’s saga is rare, but it sets the stage for a bigger question: are certain breeds more likely to become repeat visitors?
 
-### 2. Most Common Dog Breeds Returning to the Shelter
+### 2\. Most Common Dog Breeds Returning to the Shelter
 
 When it comes to repeat returns, one group towers above the rest: **Pit Bull Mixes**. Nearly 4,000 of these dogs came back to the Austin Animal Center after adoption or placement, that's almost double the number of the next runner-up, Labrador Retriever Mixes.
 
@@ -61,17 +62,15 @@ After that, the numbers taper off but are still notable. Chihuahua Short-Hair Mi
 
 This doesn't seem to be just about breed popularity in Austin. The pattern could reflect deeper challenges:
 
--   Housing and insurance restrictions that limit where certain breeds can live.
-
--   Behavioral traits that require more training than many adopters anticipate.
-
--   Mismatches between dogs and households that only become obvious after the honeymoon period ends.
+* Housing and insurance restrictions that limit where certain breeds can live.
+* Behavioral traits that require more training than many adopters anticipate.
+* Mismatches between dogs and households that only become obvious after the honeymoon period ends.
 
 The data doesn’t tell us the “why” outright, but it does point us toward where to look. If the goal is to cut down repeat returns, these breeds are the logical starting point for targeted outreach, training support, and adoption counseling.
 
 Of course, breed is just one part of the story. Another angle worth exploring is **sex,** not just male versus female, but whether the dogs were intact or already fixed.
 
-### 3. Sex and Spay/Neuter Status of Repeat-Return Dogs
+### 3\. Sex and Spay/Neuter Status of Repeat-Return Dogs
 
 When we imagine dogs that keep ending up back at the shelter, the stereotype is usually of intact males roaming the neighborhood looking for a mate. But the numbers tell a different story.
 
@@ -83,7 +82,7 @@ In other words, fixing the animal doesn’t necessarily address the problem.
 
 So far, we’ve looked at who these repeat dogs are. Next, I turned to when they tend to return, to see if any seasonal or historical patterns stood out.
 
-### 4. Sex Distribution Within the Top 10 Repeat-Return Breeds
+### 4\. Sex Distribution Within the Top 10 Repeat-Return Breeds
 
 In the last section, we saw that most repeat-return dogs were already spayed or neutered, which challenges the idea that intact males are driving the pattern. So the next question is: within the breeds most likely to come back, does one sex tip the scales?
 
@@ -93,20 +92,18 @@ The one outlier was Staffordshire Mixes, where females actually made up the majo
 
 With the “who” questions in mind, I then turned to the “when”, looking at whether certain seasons or historical shifts shaped the timing of these returns.
 
-### 5. Monthly Repeat Dog Intakes at Austin Animal Center
+### 5\. Monthly Repeat Dog Intakes at Austin Animal Center
 
 This heatmap tracks how many repeat-intake dogs came into the Austin Animal Center each month from 2014 through 2024. (I omitted both 2013 and 2025 because of incomplete data).
 
 How to read this chart:
 
--   Each row is a year; each column is a month.
+* Each row is a year; each column is a month.
+* Darker shades mean fewer repeat intakes; lighter, hotter shades mean more.
+* Look for horizontal bands (seasonal patterns) or sudden shifts (events or disruptions).
 
--   Darker shades mean fewer repeat intakes; lighter, hotter shades mean more.
-
--   Look for horizontal bands (seasonal patterns) or sudden shifts (events or disruptions).
-
-**What the data shows\
-**Before 2020, strong seasonal cycles appeared, with repeat returns peaking in late spring and summer (April–July). These surges likely align with "relocation season", when leases turn over, schools let out, and families are more likely to move. Moves often bring housing restrictions or disruptions that can force pet returns.
+\*\*What the data shows  
+\*\*Before 2020, strong seasonal cycles appeared, with repeat returns peaking in late spring and summer (April–July). These surges likely align with "relocation season", when leases turn over, schools let out, and families are more likely to move. Moves often bring housing restrictions or disruptions that can force pet returns.
 
 In 2020, the pattern broke sharply: repeat intakes dropped across nearly every month. This coincides with the COVID-19 pandemic, when shutdowns, higher adoption rates, and expanded fostering programs kept many dogs out of the shelter.
 
@@ -120,7 +117,7 @@ This monthly view highlighted two things clearly: consistent pre-pandemic peaks 
 
 In Part 1, we saw that male dogs make up a bigger share of repeat returns than females, and most of them were already neutered. That alone challenges the stereotype that intact males are the main culprits behind repeat visits. To dig deeper, I looked at how these neutered males were coming back to the shelter.
 
-### 1. Why Neutered Males Return Multiple Times
+### 1\. Why Neutered Males Return Multiple Times
 
 **Owner-driven returns** stood out as the single biggest factor. Almost half (47.4%) of repeat intakes for neutered males were **owner surrenders**, cases where the owner brought the dog back themselves. The data doesn’t give exact reasons, but it likely includes things like housing restrictions, financial struggles, changes in family circumstances, or behavior issues that proved too much to handle.
 
@@ -128,7 +125,7 @@ In Part 1, we saw that male dogs make up a bigger share of repeat returns than f
 
 Taken together, the numbers show that neutered males aren’t just escape artists, they’re often repeat visitors because of their owners’ circumstances or decisions. Without detailed “intake subtypes” we can’t know the exact why, but the categories point more toward human factors than the dogs themselves.
 
-### 2. Where Neutered Male Dogs End Up After Returning to the Shelter
+### 2\. Where Neutered Male Dogs End Up After Returning to the Shelter
 
 After flagging neutered males as the largest group of repeat-intake dogs, I looked at what happened each time they left the shelter.
 
@@ -136,44 +133,38 @@ The most common outcome was adoption, making up nearly half of all cases (46.8% 
 
 Most dogs left the shelter alive, but not every story ended that way:
 
--   Euthanasia: 1.7% (157 dogs), usually for behavioral or medical reasons.
-
--   No Outcome Recorded: 0.5% (49 dogs).
-
--   Died in Care: 0.1% (11 dogs).
-
--   Died (Disposal): 0.04% (4 dogs).
-
--   Missing: \<0.01% (1 dog).
+* Euthanasia: 1.7% (157 dogs), usually for behavioral or medical reasons.
+* No Outcome Recorded: 0.5% (49 dogs).
+* Died in Care: 0.1% (11 dogs).
+* Died (Disposal): 0.04% (4 dogs).
+* Missing: <0.01% (1 dog).
 
 These numbers tell us the big picture, but outcomes often depend on how a dog came back, whether as an owner surrender, a stray, or through another path. So next, I broke outcomes down by intake type to see if the story changes depending on how the dog re-entered the system.
 
-### 3. What’s behind the negative outcomes?
+### 3\. What’s behind the negative outcomes?
 
 Breaking outcomes into subtypes gives us a sharper picture.
 
--   **Transfers:** Nearly all went to partner rescues (95.6%, or 1,076 dogs), with a smaller share to out-of-state partners (4.4%, or 50 dogs).
-
--   **Foster:** 589 dogs were placed in foster homes, often a stepping stone toward adoption.
-
--   **Euthanasia:** The majority were for behavioral or aggression-related reasons (103 cases, 65.6%). Another 32 cases (20.4%) were due to medical issues or suffering.
+* **Transfers:** Nearly all went to partner rescues (95.6%, or 1,076 dogs), with a smaller share to out-of-state partners (4.4%, or 50 dogs).
+* **Foster:** 589 dogs were placed in foster homes, often a stepping stone toward adoption.
+* **Euthanasia:** The majority were for behavioral or aggression-related reasons (103 cases, 65.6%). Another 32 cases (20.4%) were due to medical issues or suffering.
 
 This means nearly 9 in 10 neutered male repeat-intake dogs eventually leave the shelter alive, most through adoption or reunification. But the small fraction facing life-ending outcomes points to clear pressure points: behavior support, medical care, and adoption matching. Strengthening these areas could help reduce the cycle of returns and improve long-term outcomes.
 
 
 
-### 4. Outcomes by Intake Reason: Neutered Males
+### 4\. Outcomes by Intake Reason: Neutered Males
 
 This chart compares what happened to neutered male dogs after returning to the shelter, split into two groups: owner surrenders and non–owner surrenders (strays or public assist).
 
--   **Owner Surrenders:** Most were rehomed (74.3% were adopted). Transfers made up 18.7%, while just 4.0% were reunited with their original owner. Euthanasia occurred in 2.0%.
-
--   **Non–Owner Surrenders:** The majority (61.4%) were reclaimed by their families. Adoption followed at 28.6%, then transfers at 7.8%. Euthanasia occurred in 1.6%.
+* **Owner Surrenders:** Most were rehomed (74.3% were adopted). Transfers made up 18.7%, while just 4.0% were reunited with their original owner. Euthanasia occurred in 2.0%.
+* **Non–Owner Surrenders:** The majority (61.4%) were reclaimed by their families. Adoption followed at 28.6%, then transfers at 7.8%. Euthanasia occurred in 1.6%.
 
 Owner-surrendered dogs tend to move on through adoption, while non–owner surrenders are most often reunited with their original families. In both groups, euthanasia remains rare but slightly more frequent among owner surrenders.
 
 
-### 5. Most Common Breeds in Repeat Neutered Male Dog Intakes
+
+### 5\. Most Common Breeds in Repeat Neutered Male Dog Intakes
 
 After looking at outcomes, the next question is which breeds dominate this group of repeat-intake neutered males.
 
@@ -183,7 +174,7 @@ This skew matters because when one or two breeds dominate, their outcomes shape 
 
 This means that the over representation of a few breeds means that targeted adoption counseling, breed-specific support, or community education could make a measurable impact on reducing repeat returns.
 
-# Conclusion & Implications
+# Conclusion \& Implications
 
 This analysis of repeat dog intakes at the Austin Animal Center shows that while most dogs return only once, a smaller but important subset (especially neutered males) cycle back multiple times. Breeds such as Pit Bull Mixes, Labrador Retriever Mixes, and Chihuahua Shorthair Mixes are disproportionately represented, which means their outcomes weigh heavily on the shelter’s overall trends. Intake reason also matters: owner surrenders are most often rehomed through adoption, while non–owner surrenders are more often reunited with their families. Seasonal peaks before 2020, the sharp pandemic drop, and slower rebounds afterward suggest that community behavior and shelter operations strongly shape return patterns.
 
@@ -199,22 +190,23 @@ Working through these gaps made me think more about ethics in shelter data. It�
 
 In the end, this project gave me stronger technical skills and a better sense of how messy real-world data connects to animal welfare. It also left me with new questions: how age affects repeat returns, how community-level issues like poverty and housing impact intakes, and what kinds of support actually help keep dogs in homes. Those are the kinds of things I’d want to dig into next, since they’d make future research more useful not just for shelters, but for adopters and especially for the sweet pups who end up back in the system.
 
-------------------------------------------------------------------------
+\---
 
 # References
 
-ASPCA. (2024). Pet statistics. ASPCA. <https://www.aspca.org/helping-shelters-people-pets/us-animal-shelter-statistics>
+ASPCA. (2024). Pet statistics. ASPCA. [https://www.aspca.org/helping-shelters-people-pets/us-animal-shelter-statistics](https://www.aspca.org/helping-shelters-people-pets/us-animal-shelter-statistics)
 
-City of Austin, Texas. (2025). Austin Animal Center intake and outcome data (2013–2025) \[Data set\]. City of Austin Open Data Portal. <https://data.austintexas.gov>
+City of Austin, Texas. (2025). Austin Animal Center intake and outcome data (2013–2025) \[Data set]. City of Austin Open Data Portal. [https://data.austintexas.gov](https://data.austintexas.gov)
 
-Grolemund, G., & Wickham, H. (2017). R for data science: Import, tidy, transform, visualize, and model data. O’Reilly Media.
+Grolemund, G., \& Wickham, H. (2017). R for data science: Import, tidy, transform, visualize, and model data. O’Reilly Media.
 
-Hawes, S. M., Kerrigan, J. M., & Morris, K. N. (2020). Factors informing outcomes for older cats and dogs in animal shelters. Animals, 10(5), 746. <https://doi.org/10.3390/ani10050746>
+Hawes, S. M., Kerrigan, J. M., \& Morris, K. N. (2020). Factors informing outcomes for older cats and dogs in animal shelters. Animals, 10(5), 746. [https://doi.org/10.3390/ani10050746](https://doi.org/10.3390/ani10050746)
 
 Long, J. D. (2019). R cookbook: Proven recipes for data analysis, statistics, and graphics (2nd ed.). O’Reilly Media.
 
 Miller, J. E. (2005). The Chicago guide to writing about multivariate analysis. University of Chicago Press.
 
-Patronek, G. J., Glickman, L. T., Beck, A. M., McCabe, G. P., & Ecker, C. (1996). Risk factors for relinquishment of dogs to an animal shelter. Journal of the American Veterinary Medical Association, 209(3), 572–581. <https://pubmed.ncbi.nlm.nih.gov/8755975/>
+Patronek, G. J., Glickman, L. T., Beck, A. M., McCabe, G. P., \& Ecker, C. (1996). Risk factors for relinquishment of dogs to an animal shelter. Journal of the American Veterinary Medical Association, 209(3), 572–581. [https://pubmed.ncbi.nlm.nih.gov/8755975/](https://pubmed.ncbi.nlm.nih.gov/8755975/)
 
-R Core Team. (2025). R: A language and environment for statistical computing. R Foundation for Statistical Computing. <https://www.R-project.org>
+R Core Team. (2025). R: A language and environment for statistical computing. R Foundation for Statistical Computing. [https://www.R-project.org](https://www.R-project.org)
+
